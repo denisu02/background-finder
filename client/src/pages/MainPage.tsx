@@ -1,36 +1,40 @@
 import { useEffect, useState } from 'react';
 import type { Background, Category } from '../components/types';
+import CardList from '../components/CardList';
 
 const MainPage: React.FC = () => {
     const [categories, setCategories] = useState<Category[] | null>(null);
     const [backgrounds, setBackgrounds] = useState<Background[] | null>(null);
 
-    const [categoriesLoading, setCategoriesLoading] = useState(true);
-    const [backgroundsLoading, setBackgroundsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const resCategories = await fetch('http://localhost:3000/categories');
+                const resCategories = await fetch(
+                    'http://localhost:3000/categories'
+                );
                 const jsonCategories = await resCategories.json();
                 setCategories(jsonCategories);
-                setCategoriesLoading(false);
+                setIsLoading(false);
             } catch (err) {
-                setError('Failed to fetch data');
-                setCategoriesLoading(false);
+                setError('Failed to fetch data. Check your server connection.');
+                setIsLoading(false);
             }
         };
 
         const fetchBackgrounds = async () => {
             try {
-                const resBackgrounds = await fetch('http://localhost:3000/backgrounds');
+                const resBackgrounds = await fetch(
+                    'http://localhost:3000/backgrounds'
+                );
                 const jsonBackgrounds = await resBackgrounds.json();
                 setBackgrounds(jsonBackgrounds);
-                setBackgroundsLoading(false);
+                setIsLoading(false);
             } catch (err) {
-                setError('Failed to fetch data');
-                setBackgroundsLoading(false);
+                setError('Failed to fetch data. Check your server connection.');
+                setIsLoading(false);
             }
         };
 
@@ -38,9 +42,33 @@ const MainPage: React.FC = () => {
         fetchBackgrounds();
     }, []);
 
-    console.log(categories, backgrounds, error);
-
-    return <div>{!categoriesLoading && !backgroundsLoading && !error && <h1>Fetching is completed</h1>}</div>;
+    return (
+        <>
+            {error ? (
+                <div className="text-red-500 text-center text-3xl  justify-center mt-10">
+                    {error}
+                </div>
+            ) : isLoading ? (
+                <div className="text-gray-500 text-center text-3xl  justify-center mt-10">
+                    Loading...
+                </div>
+            ) : (
+                <div className="mt-20 ml-20 mr-20">
+                    {backgrounds &&
+                        categories &&
+                        categories.map((category) => (
+                            <CardList
+                                key={category.id}
+                                title={category.name}
+                                cards={backgrounds.filter(
+                                    (bg) => bg.categoryId === category.id
+                                )}
+                            />
+                        ))}
+                </div>
+            )}
+        </>
+    );
 };
 
 export default MainPage;

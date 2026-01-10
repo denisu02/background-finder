@@ -2,7 +2,8 @@
     "categories": [
         { "id": 1, "name": "Nature" },
         { "id": 2, "name": "City" },
-        { "id": 3, "name": "Abstract" }
+        { "id": 3, "name": "Abstract" },
+        { "id": 4, "name": "People" }
     ],
 
     "backgrounds": [
