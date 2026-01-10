@@ -7,10 +7,8 @@ type SectionProps = {
 };
 const CardList: React.FC<SectionProps> = ({ title, cards }) => {
     return (
-        <div>
-            <h1 className="text-3xl font-bold mt-24 mb-4 text-gray-700">
-                {title}
-            </h1>
+        <div className="mb-24">
+            <h1 className="text-3xl font-bold mb-4 text-gray-700">{title}</h1>
 
             <span className="grid grid-cols-5 gap-4">
                 {cards.length ? (
