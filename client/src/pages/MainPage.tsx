@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
 import type { Background, Category } from '../components/types';
 import CardList from '../components/CardList';
+import SearchInput from '../components/SearchInput';
 
 const MainPage: React.FC = () => {
     const [categories, setCategories] = useState<Category[] | null>(null);
     const [backgrounds, setBackgrounds] = useState<Background[] | null>(null);
+    const [filteredBackgrounds, setFilteredBackgrounds] = useState<
+        Background[] | null
+    >(null);
 
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    console.log(filteredBackgrounds);
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -42,6 +48,20 @@ const MainPage: React.FC = () => {
         fetchBackgrounds();
     }, []);
 
+    const filterBackgrounds = (searchTerm: string) => {
+        if (!backgrounds) return;
+
+        setFilteredBackgrounds(backgrounds);
+        const filtered = backgrounds.filter(
+            (bg) =>
+                bg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                bg.tags.some((tag) =>
+                    tag.toLowerCase().includes(searchTerm.toLowerCase())
+                ) ||
+                bg.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredBackgrounds(filtered);
+    };
     return (
         <>
             {error ? (
@@ -54,13 +74,14 @@ const MainPage: React.FC = () => {
                 </div>
             ) : (
                 <div className="mt-20 ml-20 mr-20">
-                    {backgrounds &&
+                    <SearchInput onSearchChange={filterBackgrounds} />
+                    {filteredBackgrounds &&
                         categories &&
                         categories.map((category) => (
                             <CardList
                                 key={category.id}
                                 title={category.name}
-                                cards={backgrounds.filter(
+                                cards={filteredBackgrounds.filter(
                                     (bg) => bg.categoryId === category.id
                                 )}
                             />
