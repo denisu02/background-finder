@@ -13,8 +13,6 @@ const MainPage: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    console.log(filteredBackgrounds);
-
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -37,6 +35,7 @@ const MainPage: React.FC = () => {
                 );
                 const jsonBackgrounds = await resBackgrounds.json();
                 setBackgrounds(jsonBackgrounds);
+                setFilteredBackgrounds(jsonBackgrounds);
                 setIsLoading(false);
             } catch (err) {
                 setError('Failed to fetch data. Check your server connection.');
@@ -51,7 +50,6 @@ const MainPage: React.FC = () => {
     const filterBackgrounds = (searchTerm: string) => {
         if (!backgrounds) return;
 
-        setFilteredBackgrounds(backgrounds);
         const filtered = backgrounds.filter(
             (bg) =>
                 bg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

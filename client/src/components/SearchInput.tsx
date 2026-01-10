@@ -6,7 +6,6 @@ type SearchInputProps = {
 
 const SearchInput: React.FC<SearchInputProps> = ({ onSearchChange }) => {
     const [searchTerm, setSearchTerm] = useState<string>('');
-    console.log(searchTerm);
 
     return (
         <div className="text-center">
