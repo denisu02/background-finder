@@ -1,0 +1,237 @@
+{
+    "categories": [
+        { "id": 1, "name": "Nature" },
+        { "id": 2, "name": "City" },
+        { "id": 3, "name": "Abstract" }
+    ],
+
+    "backgrounds": [
+        {
+            "id": 1,
+            "categoryId": 1,
+            "name": "Forest Path",
+            "description": "A peaceful green forest path at sunrise.",
+            "image": "/nature1.jpg",
+            "price": 2.99
+        },
+        {
+            "id": 2,
+            "categoryId": 1,
+            "name": "Mountain Lake",
+            "description": "A lake surrounded by snowy peaks.",
+            "image": "/nature2.jpg"
+        },
+        {
+            "id": 3,
+            "categoryId": 1,
+            "name": "Golden Fields",
+            "description": "Warm golden wheat fields under a clear sky.",
+            "image": "/nature3.jpg",
+            "price": 1.49
+        },
+        {
+            "id": 4,
+            "categoryId": 1,
+            "name": "Ocean Horizon",
+            "description": "Blue ocean waves extending to the horizon.",
+            "image": "/nature4.jpg"
+        },
+        {
+            "id": 5,
+            "categoryId": 1,
+            "name": "Autumn Leaves",
+            "description": "Beautiful orange and red fall foliage.",
+            "image": "/nature5.jpg",
+            "price": 3.25
+        },
+        {
+            "id": 6,
+            "categoryId": 1,
+            "name": "Snowy Forest",
+            "description": "Winter wonderland with frosted trees.",
+            "image": "/nature6.jpg"
+        },
+        {
+            "id": 7,
+            "categoryId": 1,
+            "name": "Desert Dunes",
+            "description": "Golden sand dunes shaped by the wind.",
+            "image": "/nature7.jpg",
+            "price": 0.99
+        },
+        {
+            "id": 8,
+            "categoryId": 1,
+            "name": "Tropical Beach",
+            "description": "Palm trees and turquoise water.",
+            "image": "/nature8.jpg"
+        },
+        {
+            "id": 9,
+            "categoryId": 1,
+            "name": "Waterfall Edge",
+            "description": "A dramatic cliff waterfall in a lush jungle.",
+            "image": "/nature9.jpg",
+            "price": 4.99
+        },
+        {
+            "id": 10,
+            "categoryId": 1,
+            "name": "Lavender Fields",
+            "description": "Endless purple lavender fields at sunset.",
+            "image": "/nature10.jpg"
+        },
+
+        {
+            "id": 11,
+            "categoryId": 2,
+            "name": "Night Skyline",
+            "description": "A glowing futuristic city skyline at night.",
+            "image": "/city1.jpg",
+            "price": 3.49
+        },
+        {
+            "id": 12,
+            "categoryId": 2,
+            "name": "Street Alley",
+            "description": "A cozy old-town alleyway with warm lights.",
+            "image": "/city2.jpg"
+        },
+        {
+            "id": 13,
+            "categoryId": 2,
+            "name": "Downtown Sunrise",
+            "description": "Sunlight breaking through tall skyscrapers.",
+            "image": "/city3.jpg",
+            "price": 1.99
+        },
+        {
+            "id": 14,
+            "categoryId": 2,
+            "name": "Metro Station",
+            "description": "Minimalistic metro entrance with symmetry.",
+            "image": "/city4.jpg"
+        },
+        {
+            "id": 15,
+            "categoryId": 2,
+            "name": "Neon Streets",
+            "description": "Cyberpunk-style neon signs glowing in the rain.",
+            "image": "/city5.jpg",
+            "price": 2.75
+        },
+        {
+            "id": 16,
+            "categoryId": 2,
+            "name": "Historic Town",
+            "description": "European medieval buildings and cobblestone streets.",
+            "image": "/city6.jpg"
+        },
+        {
+            "id": 17,
+            "categoryId": 2,
+            "name": "City Bridge",
+            "description": "A scenic suspension bridge with traffic trails.",
+            "image": "/city7.jpg",
+            "price": 4.5
+        },
+        {
+            "id": 18,
+            "categoryId": 2,
+            "name": "Subway Tunnel",
+            "description": "A vanishing point subway tunnel shot.",
+            "image": "/city8.jpg"
+        },
+        {
+            "id": 19,
+            "categoryId": 2,
+            "name": "Business District",
+            "description": "Modern glass towers against a clear sky.",
+            "image": "/city9.jpg",
+            "price": 2.0
+        },
+        {
+            "id": 20,
+            "categoryId": 2,
+            "name": "City Rooftop",
+            "description": "A rooftop overlooking a city sunset.",
+            "image": "/city10.jpg"
+        },
+
+        {
+            "id": 21,
+            "categoryId": 3,
+            "name": "Pink Waves",
+            "description": "Soft pink abstract flowing shapes.",
+            "image": "/abstract1.jpg",
+            "price": 0.99
+        },
+        {
+            "id": 22,
+            "categoryId": 3,
+            "name": "Color Burst",
+            "description": "Exploding paint splashes frozen mid-air.",
+            "image": "/abstract2.jpg"
+        },
+        {
+            "id": 23,
+            "categoryId": 3,
+            "name": "Geometric Cubes",
+            "description": "Modern 3D cubes in blue and white.",
+            "image": "/abstract3.jpg",
+            "price": 1.49
+        },
+        {
+            "id": 24,
+            "categoryId": 3,
+            "name": "Digital Flow",
+            "description": "Streamlined digital wave pattern.",
+            "image": "/abstract4.jpg"
+        },
+        {
+            "id": 25,
+            "categoryId": 3,
+            "name": "Purple Smoke",
+            "description": "Smooth drifting purple smoke effect.",
+            "image": "/abstract5.jpg",
+            "price": 2.25
+        },
+        {
+            "id": 26,
+            "categoryId": 3,
+            "name": "Fractal Bloom",
+            "description": "Beautiful fractal pattern resembling a flower.",
+            "image": "/abstract6.jpg"
+        },
+        {
+            "id": 27,
+            "categoryId": 3,
+            "name": "Chrome Surface",
+            "description": "Reflective chrome abstract curves.",
+            "image": "/abstract7.jpg",
+            "price": 3.5
+        },
+        {
+            "id": 28,
+            "categoryId": 3,
+            "name": "Liquid Metal",
+            "description": "Melting silver liquid shapes.",
+            "image": "/abstract8.jpg"
+        },
+        {
+            "id": 29,
+            "categoryId": 3,
+            "name": "Neon Grid",
+            "description": "Retro-futuristic neon grid landscape.",
+            "image": "/abstract9.jpg",
+            "price": 1.0
+        },
+        {
+            "id": 30,
+            "categoryId": 3,
+            "name": "Cosmic Swirl",
+            "description": "Space-inspired colorful swirl pattern.",
+            "image": "/abstract10.jpg"
+        }
+    ]
+}
