@@ -1,7 +1,8 @@
 import './App.css';
+import MainPage from './pages/MainPage';
 
 function App() {
-    return <h1>ProjectSetup</h1>;
+    return <MainPage />;
 }
 
 export default App;
