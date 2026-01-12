@@ -1,0 +1,14 @@
+header {
+    background-color: var(--color-zinc-400);
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+h1 {
+    font-size: 30px;
+    color: var(--color-gray-700);
+    font-weight: bold;
+}

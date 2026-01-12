@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import type { Background, Category } from '../components/types';
-import CardList from '../components/CardList';
-import SearchInput from '../components/SearchInput';
+import CardList from '../components/CardList/CardList';
+import SearchInput from '../components/SearchInput/SearchInput';
 import { filterCriteria } from '../utils/utils';
+import './MainPage.css';
 
 const MainPage: React.FC = () => {
     const [categories, setCategories] = useState<Category[] | null>(null);
@@ -60,15 +61,11 @@ const MainPage: React.FC = () => {
     return (
         <>
             {error ? (
-                <div className="text-red-500 text-center text-3xl  justify-center mt-10">
-                    {error}
-                </div>
+                <div className="error">{error}</div>
             ) : isLoading ? (
-                <div className="text-gray-500 text-center text-3xl  justify-center mt-10">
-                    Loading...
-                </div>
+                <div className="loading">Loading...</div>
             ) : (
-                <div className="mt-10 ml-10 mr-10 md:mt-20 md:ml-20 md:mr-20">
+                <div className="cards-container">
                     <SearchInput onSearchChange={filterBackgrounds} />
                     {filteredBackgrounds &&
                         categories &&
