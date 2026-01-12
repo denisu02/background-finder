@@ -13,10 +13,10 @@ const Card: React.FC<CardProps> = ({
     const hasPrice = !!price;
 
     return (
-        <div className="rounded text-center overflow-hidden shadow-xl/30 bg-white">
+        <div className="rounded text-center overflow-hidden shadow-xl/30 bg-white max-w-sm">
             <div>
                 <img
-                    className="w-full h-75"
+                    className="sm:h-75 w-full h-45"
                     src={`http://localhost:3000${image}`}
                     alt={name}
                 />
