@@ -1,0 +1,29 @@
+.error {
+    color: var(--color-red-500);
+    text-align: center;
+    font-size: 1.875rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.loading {
+    color: var(--color-gray-500);
+    text-align: center;
+    font-size: 1.875rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.cards-container {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        margin-top: 2.5rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+}
