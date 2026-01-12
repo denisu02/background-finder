@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Background, Category } from '../components/types';
 import CardList from '../components/CardList';
 import SearchInput from '../components/SearchInput';
+import { filterCriteria } from '../utils/utils';
 
 const MainPage: React.FC = () => {
     const [categories, setCategories] = useState<Category[] | null>(null);
@@ -50,16 +51,12 @@ const MainPage: React.FC = () => {
     const filterBackgrounds = (searchTerm: string) => {
         if (!backgrounds) return;
 
-        const filtered = backgrounds.filter(
-            (bg) =>
-                bg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                bg.tags.some((tag) =>
-                    tag.toLowerCase().includes(searchTerm.toLowerCase())
-                ) ||
-                bg.description.toLowerCase().includes(searchTerm.toLowerCase())
+        const filtered = backgrounds.filter((bg) =>
+            filterCriteria(bg, searchTerm, categories || [])
         );
         setFilteredBackgrounds(filtered);
     };
+
     return (
         <>
             {error ? (
