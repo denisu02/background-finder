@@ -68,7 +68,7 @@ const MainPage: React.FC = () => {
                     Loading...
                 </div>
             ) : (
-                <div className="mt-20 ml-20 mr-20">
+                <div className="mt-10 ml-10 mr-10 md:mt-20 md:ml-20 md:mr-20">
                     <SearchInput onSearchChange={filterBackgrounds} />
                     {filteredBackgrounds &&
                         categories &&
